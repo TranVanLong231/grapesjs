@@ -279,7 +279,7 @@ export type ToHTMLOptions = {
    * In case the attribute value contains a `"` char, instead of escaping it (`attr="value &quot;"`), the attribute will be quoted using single quotes (`attr='value "'`).
    */
   altQuoteAttr?: boolean;
-
+  ignoreTags?: string[];
   /**
    * You can pass an object of custom attributes to replace with the current ones
    * or you can even pass a function to generate attributes dynamically.

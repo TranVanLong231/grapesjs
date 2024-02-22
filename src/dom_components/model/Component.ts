@@ -1569,7 +1569,12 @@ export default class Component extends StyleableModel<ComponentProperties> {
     const model = this;
     const attrs = [];
     const customTag = opts.tag;
+    const ignoreTags = opts.ignoreTags;
     const tag = customTag || model.get('tagName');
+    if (ignoreTags && tag)
+      if (ignoreTags.indexOf(tag) != -1) {
+        return '';
+      }
     const sTag = model.get('void');
     const customAttr = opts.attributes;
     let attributes = this.getAttrToHTML();
